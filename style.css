@@ -2,12 +2,28 @@ body {
   background-color: hsl(275, 100%, 97%);
 }
 
+.header-img {
+  position: absolute;
+  z-index: 0;
+}
+
+.header-img-mobile {
+  position: absolute;
+  z-index: 0;
+  display: none;
+}
+
 main {
-  margin: 0 auto;
-  width: 50%;
+  width: 40%;
   padding: 50px 35px;
   background-color: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 15px;
+  position: absolute; 
+  top: 50%;           
+  left: 50%;          
+  transform: translate(-50%, -35%); /* 修正偏移，確保以中心點為基準 */
+  z-index: 1;
 }
 
 .title {
@@ -34,4 +50,36 @@ h3:hover {
 
 p {
   color: hsl(292, 16%, 49%);
+}
+
+h3, p {
+  font-size: 16px;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Mobile */
+@media only screen and (max-width:375px) {
+  .header-img {
+    display: none;
+  }
+  
+  .header-img-mobile {
+    display: block;
+  }
+  
+  main {
+    width: 80%;
+    top: 10%;           
+    left: 50%;          
+  }
 }
